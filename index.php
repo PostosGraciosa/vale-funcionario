@@ -1,6 +1,6 @@
 <?php
 
-// Busca o próximo número do vale
+// Controle do número do vale
 $arquivo = "dados/contador.txt";
 
 if (!file_exists($arquivo)) {
@@ -8,9 +8,10 @@ if (!file_exists($arquivo)) {
 }
 
 $numeroAtual = intval(file_get_contents($arquivo));
+
 $proximoVale = $numeroAtual + 1;
 
-$numeroFormatado = "VG-" . str_pad($proximoVale, 6, "0", STR_PAD_LEFT);
+$numeroVale = "VG-" . str_pad($proximoVale, 6, "0", STR_PAD_LEFT);
 
 
 // Data atual
@@ -22,15 +23,25 @@ $dataAtual = date("d/m/Y");
 <html lang="pt-BR">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sistema de Emissão de Vales - Postos Graciosa</title>
+<title>
+Sistema de Emissão de Vales - Postos Graciosa
+</title>
 
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap -->
+<link 
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+rel="stylesheet">
 
+
+<!-- CSS do sistema -->
 <link rel="stylesheet" href="css/style.css">
+
 
 </head>
 
@@ -38,7 +49,7 @@ $dataAtual = date("d/m/Y");
 <body>
 
 
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
 
 
 <div class="card shadow">
@@ -46,23 +57,31 @@ $dataAtual = date("d/m/Y");
 
 <div class="card-header text-center">
 
+
 <h2>
 POSTOS GRACIOSA
 </h2>
+
 
 <h5>
 Sistema de Emissão de Vales
 </h5>
 
+
 </div>
+
 
 
 
 <div class="card-body">
 
 
+
 <form action="imprimir.php" method="POST">
 
+
+
+<!-- EMPRESA -->
 
 <div class="mb-3">
 
@@ -89,28 +108,28 @@ POSTO JARIVA LTDA
 </option>
 
 
-<option value="POSTO PIRAI LTDA">
-POSTO PIRAI LTDA
+<option value="AUTO POSTO FÁTIMA LTDA">
+AUTO POSTO FÁTIMA LTDA
 </option>
 
 
-<option value="POSTOS GRACIOSA MATRIZ LTDA">
-POSTOS GRACIOSA MATRIZ LTDA
+<option value="POSTO BEMER LTDA">
+POSTO BEMER LTDA
 </option>
 
 
-<option value="POSTO GRACIOSA FILIAL">
-POSTO GRACIOSA FILIAL
+<option value="POSTO GRACIOSA V LTDA">
+POSTO GRACIOSA V LTDA
 </option>
 
 
-<option value="POSTO GRACIOSA NORTE">
-POSTO GRACIOSA NORTE
+<option value="AUTO POSTO PIRAÍ LTDA">
+AUTO POSTO PIRAÍ LTDA
 </option>
 
 
-<option value="POSTO GRACIOSA SUL">
-POSTO GRACIOSA SUL
+<option value="POSTO GRACIOSA LTDA">
+POSTO GRACIOSA LTDA
 </option>
 
 
@@ -120,6 +139,10 @@ POSTO GRACIOSA SUL
 </div>
 
 
+
+
+
+<!-- CNPJ -->
 
 <div class="mb-3">
 
@@ -142,7 +165,11 @@ readonly>
 
 
 
+
+<!-- FUNCIONÁRIO -->
+
 <div class="mb-3">
+
 
 <label class="form-label">
 Funcionário
@@ -153,6 +180,7 @@ Funcionário
 type="text"
 class="form-control"
 name="funcionario"
+placeholder="Digite o nome do funcionário"
 required>
 
 
@@ -160,18 +188,31 @@ required>
 
 
 
+
+
+<!-- VALOR -->
+
 <div class="mb-3">
+
 
 <label class="form-label">
 Valor do Vale
 </label>
 
 
+<div class="input-group">
+
+
+<span class="input-group-text">
+R$
+</span>
+
+
 <input 
 type="number"
-step="0.01"
 class="form-control"
 name="valor"
+step="0.01"
 placeholder="0,00"
 required>
 
@@ -179,7 +220,14 @@ required>
 </div>
 
 
+</div>
 
+
+
+
+
+
+<!-- MOTIVO -->
 
 <div class="mb-3">
 
@@ -190,9 +238,15 @@ Motivo do Vale
 
 
 <textarea
+
 class="form-control"
+
 name="motivo"
-rows="3"
+
+rows="4"
+
+placeholder="Descreva o motivo do vale"
+
 required></textarea>
 
 
@@ -201,27 +255,39 @@ required></textarea>
 
 
 
+
+
+<!-- INFORMAÇÕES -->
+
 <div class="row">
 
 
-<div class="col-md-6">
+<div class="col-md-6 mb-3">
 
 
-<label>
+<label class="form-label">
 Número do Vale
 </label>
 
 
-<input 
+<input
+
+type="text"
+
 class="form-control"
-value="<?php echo $numeroFormatado; ?>"
+
+value="<?php echo $numeroVale; ?>"
+
 readonly>
 
 
-<input 
+<input
+
 type="hidden"
+
 name="numero"
-value="<?php echo $numeroFormatado; ?>">
+
+value="<?php echo $numeroVale; ?>">
 
 
 </div>
@@ -229,23 +295,33 @@ value="<?php echo $numeroFormatado; ?>">
 
 
 
-<div class="col-md-6">
 
 
-<label>
+<div class="col-md-6 mb-3">
+
+
+<label class="form-label">
 Data
 </label>
 
 
-<input 
+<input
+
+type="text"
+
 class="form-control"
+
 value="<?php echo $dataAtual; ?>"
+
 readonly>
 
 
-<input 
+<input
+
 type="hidden"
+
 name="data"
+
 value="<?php echo $dataAtual; ?>">
 
 
@@ -257,16 +333,20 @@ value="<?php echo $dataAtual; ?>">
 
 
 
-<br>
 
 
 <button 
-class="btn btn-success w-100"
-type="submit">
+
+type="submit"
+
+class="btn btn-success w-100 btn-lg">
+
 
 EMITIR E IMPRIMIR
 
+
 </button>
+
 
 
 
@@ -284,9 +364,12 @@ EMITIR E IMPRIMIR
 
 
 
+
+
 <script src="js/app.js"></script>
 
 
 </body>
+
 
 </html>
