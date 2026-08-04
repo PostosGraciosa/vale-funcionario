@@ -35,11 +35,13 @@ body {
 
 .card-header {
 
-    background: #006b3f;
+    background: white;
 
-    color: white;
+    color: #006b3f;
 
     padding: 30px;
+
+    border-bottom: 3px solid #006b3f;
 
 }
 
