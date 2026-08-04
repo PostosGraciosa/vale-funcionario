@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vale Funcionário</title>
+
+
+<link rel="stylesheet" href="css/print.css">
+
+
+</head>
+
+
+<body>
+
+
+<div class="folha">
+
+
+
+<div class="cabecalho">
+
+
+<img 
+src="img/logo.png" 
+class="logo"
+alt="Logo">
+
+
+<h1>
+VALE FUNCIONÁRIO
+</h1>
+
+
+</div>
+
+
+
+
+
+<div class="dados">
+
+
+<p>
+<strong>Empresa:</strong>
+<span id="empresa"></span>
+</p>
+
+
+<p>
+<strong>CNPJ:</strong>
+<span id="cnpj"></span>
+</p>
+
+
+
+<div class="linha">
+
+
+<p>
+<strong>Vale Nº:</strong>
+<span id="numero"></span>
+</p>
+
+
+
+<p>
+<strong>Data:</strong>
+<span id="data"></span>
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="declaracao">
+
+
+<h2>
+DECLARAÇÃO
+</h2>
+
+
+<p>
+
+
+Eu,
+
+<strong>
+<span id="funcionario"></span>
+</strong>,
+
+
+declaro estar ciente do ocorrido descrito neste documento e autorizo o desconto do valor de:
+
+
+<strong>
+R$ <span id="valor"></span>
+</strong>
+
+
+em minha folha de pagamento, conforme a legislação aplicável, os acordos ou convenções coletivas vigentes e as normas internas da empresa.
+
+
+
+</p>
+
+
+
+
+<h3>
+Motivo do Vale:
+</h3>
+
+
+<div class="motivo">
+
+<span id="motivo"></span>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="valor">
+
+
+<strong>
+Valor do Vale:
+</strong>
+
+
+R$ <span id="valor2"></span>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="assinaturas">
+
+
+<div>
+
+_________________________________
+
+<br>
+
+Assinatura do Funcionário
+
+</div>
+
+
+
+
+<div>
+
+_________________________________
+
+<br>
+
+Responsável pela Empresa
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<button 
+onclick="window.print()"
+class="botao">
+
+IMPRIMIR
+
+</button>
+
+
+
+
+
+</div>
+
+
+
+
+
+<script src="js/imprimir.js"></script>
+
+
+</body>
+
+
+</html>
