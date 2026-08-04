@@ -91,10 +91,7 @@ function formatarData(data){
 
 
 
-// Carrega número do vale
-
-document.getElementById("numeroVale").value =
-gerarNumeroVale();
+// Número do vale será gerado somente ao emitir
 
 
 
@@ -133,6 +130,11 @@ document.getElementById("formVale")
     e.preventDefault();
 
 
+    // Gera número somente quando emitir
+
+    let numeroGerado = gerarNumeroVale();
+
+
 
     let dadosVale = {
 
@@ -158,7 +160,7 @@ document.getElementById("formVale")
 
 
         numero:
-        document.getElementById("numeroVale").value,
+numeroGerado,
 
 
         data:
