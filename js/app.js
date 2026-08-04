@@ -31,12 +31,11 @@ selectEmpresa.addEventListener("change", function(){
     let opcaoSelecionada = this.options[this.selectedIndex];
 
 
-    document.getElementById("cnpj").value = 
+    document.getElementById("cnpj").value =
     opcaoSelecionada.dataset.cnpj || "";
 
 
 });
-
 
 
 
@@ -47,7 +46,7 @@ selectEmpresa.addEventListener("change", function(){
 function gerarNumeroVale(){
 
 
-    let ultimoNumero = 
+    let ultimoNumero =
     localStorage.getItem("numeroVale") || 0;
 
 
@@ -60,7 +59,7 @@ function gerarNumeroVale(){
     );
 
 
-    return "VG-" + 
+    return "VG-" +
     String(ultimoNumero).padStart(6,"0");
 
 
@@ -72,23 +71,15 @@ function gerarNumeroVale(){
 
 
 
-// Data atual
+// Formata data para impressão
 
-function dataAtual(){
-
-
-    let hoje = new Date();
+function formatarData(data){
 
 
-    let dia = String(hoje.getDate()).padStart(2,"0");
-
-    let mes = String(hoje.getMonth()+1).padStart(2,"0");
-
-    let ano = hoje.getFullYear();
+    let partes = data.split("-");
 
 
-
-    return `${dia}/${mes}/${ano}`;
+    return `${partes[2]}/${partes[1]}/${partes[0]}`;
 
 
 }
@@ -99,15 +90,32 @@ function dataAtual(){
 
 
 
-// Carrega informações iniciais
+
+// Carrega número do vale
 
 document.getElementById("numeroVale").value =
 gerarNumeroVale();
 
 
 
+
+
+// Define data atual como padrão
+
+let hoje = new Date();
+
+
+let ano = hoje.getFullYear();
+
+let mes = String(hoje.getMonth() + 1).padStart(2,"0");
+
+let dia = String(hoje.getDate()).padStart(2,"0");
+
+
+
 document.getElementById("dataVale").value =
-dataAtual();
+`${ano}-${mes}-${dia}`;
+
 
 
 
@@ -120,7 +128,6 @@ dataAtual();
 
 document.getElementById("formVale")
 .addEventListener("submit", function(e){
-
 
 
     e.preventDefault();
@@ -155,7 +162,9 @@ document.getElementById("formVale")
 
 
         data:
-        document.getElementById("dataVale").value
+        formatarData(
+            document.getElementById("dataVale").value
+        )
 
 
     };
@@ -172,7 +181,6 @@ document.getElementById("formVale")
 
 
     window.location.href = "imprimir.html";
-
 
 
 });
