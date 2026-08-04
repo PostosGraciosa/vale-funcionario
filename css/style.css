@@ -1,0 +1,238 @@
+body {
+
+    background: #f3f5f7;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+
+
+.container {
+
+    max-width: 750px;
+
+}
+
+
+
+
+
+.card {
+
+    border: none;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+}
+
+
+
+
+
+.card-header {
+
+    background: #006b3f;
+
+    color: white;
+
+    padding: 30px;
+
+}
+
+
+
+
+
+.logo-sistema {
+
+    max-width: 180px;
+
+    max-height: 90px;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+
+
+.card-header h2 {
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
+}
+
+
+
+
+
+.card-header p {
+
+    font-size: 16px;
+
+}
+
+
+
+
+
+.card-body {
+
+    background: white;
+
+    padding: 35px;
+
+}
+
+
+
+
+
+.form-label {
+
+    font-weight: bold;
+
+    color: #333;
+
+}
+
+
+
+
+
+.form-control,
+
+.form-select {
+
+    height: 45px;
+
+    border-radius: 8px;
+
+    border: 1px solid #ccc;
+
+}
+
+
+
+
+
+textarea.form-control {
+
+    height: auto;
+
+    resize: vertical;
+
+}
+
+
+
+
+
+.form-control:focus,
+
+.form-select:focus {
+
+    border-color: #008542;
+
+    box-shadow: 0 0 0 0.2rem rgba(0,133,66,.15);
+
+}
+
+
+
+
+
+.input-group-text {
+
+    background: #006b3f;
+
+    color: white;
+
+    border: none;
+
+}
+
+
+
+
+
+input[readonly] {
+
+    background-color: #eeeeee;
+
+    font-weight: bold;
+
+}
+
+
+
+
+
+.btn-success {
+
+    background: #008542;
+
+    border-color: #008542;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    font-size: 17px;
+
+    padding: 14px;
+
+}
+
+
+
+
+
+.btn-success:hover {
+
+    background: #006b35;
+
+    border-color: #006b35;
+
+}
+
+
+
+
+
+/* Responsivo */
+
+@media(max-width:768px){
+
+
+    .container {
+
+        margin-top:20px !important;
+
+    }
+
+
+    .card-body {
+
+        padding:20px;
+
+    }
+
+
+    .card-header h2 {
+
+        font-size:20px;
+
+    }
+
+
+}
