@@ -37,9 +37,9 @@ body {
 
     text-align: center;
 
-    border-bottom: 2px solid #000;
+    border-bottom: 3px solid #006b3f;
 
-    padding-bottom: 15px;
+    padding-bottom: 20px;
 
     margin-bottom: 25px;
 
@@ -49,11 +49,13 @@ body {
 
 .logo {
 
-    max-width: 180px;
+    max-width: 200px;
 
-    max-height: 90px;
+    max-height: 100px;
 
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+
+    filter: drop-shadow(0px 3px 5px rgba(0,0,0,0.20));
 
 }
 
@@ -77,16 +79,17 @@ body {
 
 .dados {
 
-    border: 1px solid #000;
+    border: 1px solid #333;
 
-    padding: 15px;
+    border-radius: 8px;
+
+    padding: 18px;
 
     margin-bottom: 25px;
 
     font-size: 14px;
 
 }
-
 
 
 .dados p {
@@ -104,7 +107,15 @@ body {
     justify-content: space-between;
 
 }
+.numero-vale {
 
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #006b3f;
+
+}
 
 
 
@@ -149,11 +160,13 @@ body {
 
 .motivo {
 
-    border: 1px solid #000;
+    border: 1px solid #333;
 
-    min-height: 80px;
+    border-radius: 5px;
 
-    padding: 10px;
+    min-height: 90px;
+
+    padding: 12px;
 
     margin-top: 10px;
 
@@ -168,13 +181,17 @@ body {
 
 .valor {
 
-    border: 1px solid #000;
+    border: 2px solid #006b3f;
+
+    border-radius: 8px;
 
     padding: 15px;
 
     margin-top: 30px;
 
     font-size: 18px;
+
+    font-weight: bold;
 
 }
 
