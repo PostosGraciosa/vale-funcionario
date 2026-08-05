@@ -121,68 +121,64 @@ document.getElementById("dataVale").value =
 
 
 
-// Envio do formulário
+// Função para salvar os dados do vale
 
-document.getElementById("formVale")
-.addEventListener("submit", function(e){
+function emitirVale(destino){
 
+    // Validação do formulário
+    if(!document.getElementById("formVale").checkValidity()){
+        document.getElementById("formVale").reportValidity();
+        return;
+    }
 
-    e.preventDefault();
-
-
-    // Gera número somente quando emitir
-
+    // Gera o número somente na emissão
     let numeroGerado = gerarNumeroVale();
-
-
 
     let dadosVale = {
 
+        empresa: document.getElementById("empresa").value,
 
-        empresa:
-        document.getElementById("empresa").value,
+        cnpj: document.getElementById("cnpj").value,
 
+        funcionario: document.getElementById("funcionario").value,
 
-        cnpj:
-        document.getElementById("cnpj").value,
+        valor: document.getElementById("valor").value,
 
+        motivo: document.getElementById("motivo").value,
 
-        funcionario:
-        document.getElementById("funcionario").value,
+        numero: numeroGerado,
 
-
-        valor:
-        document.getElementById("valor").value,
-
-
-        motivo:
-        document.getElementById("motivo").value,
-
-
-        numero:
-numeroGerado,
-
-
-        data:
-        formatarData(
+        data: formatarData(
             document.getElementById("dataVale").value
         )
 
-
     };
-
-
-
-
 
     localStorage.setItem(
         "valeAtual",
         JSON.stringify(dadosVale)
     );
 
+    window.location.href = destino;
+
+}
 
 
-    window.location.href = "imprimir.html";
+// Botão A4
 
+document.getElementById("btnA4")
+.addEventListener("click", function(){
+
+    emitirVale("imprimir.html");
+
+});
+
+
+// Botão Impressora Térmica
+
+document.getElementById("btnTermica")
+.addEventListener("click", function(){
+
+    emitirVale("termica.html");
 
 });
