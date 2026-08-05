@@ -167,7 +167,7 @@ if (destino === "termica.html") {
 
 } else {
 
-    window.location.href = destino;
+    window.open(destino, "_blank");
 
 }
 
