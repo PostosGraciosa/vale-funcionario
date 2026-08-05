@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vale Funcionário - Impressão Térmica</title>
+
+<link rel="stylesheet" href="css/termica.css">
+
+</head>
+
+<body>
+
+<div class="cupom">
+
+    <div class="cabecalho">
+
+        <img
+        src="img/logo.png"
+        class="logo"
+        alt="Logo">
+
+        <h2>POSTOS GRACIOSA</h2>
+
+        <h3>VALE DE FUNCIONÁRIO</h3>
+
+    </div>
+
+    <hr>
+
+    <p><strong>Posto:</strong><br>
+    <span id="empresa"></span></p>
+
+    <p><strong>CNPJ:</strong><br>
+    <span id="cnpj"></span></p>
+
+    <p><strong>Vale Nº:</strong>
+    <span id="numero"></span></p>
+
+    <p><strong>Data:</strong>
+    <span id="data"></span></p>
+
+    <hr>
+
+    <p><strong>Funcionário</strong></p>
+
+    <p class="destaque" id="funcionario"></p>
+
+    <hr>
+
+    <p><strong>Valor</strong></p>
+
+    <p class="valor">
+        R$ <span id="valor"></span>
+    </p>
+
+    <hr>
+
+    <p><strong>Motivo</strong></p>
+
+    <div class="motivo">
+        <span id="motivo"></span>
+    </div>
+
+    <hr>
+
+    <h4>DECLARAÇÃO</h4>
+
+    <p class="texto">
+
+        Eu,
+
+        <strong>
+            <span id="funcionario2"></span>
+        </strong>,
+
+        declaro estar ciente do motivo descrito neste documento e autorizo o desconto do valor de
+
+        <strong>
+            R$ <span id="valor2"></span>
+        </strong>
+
+        em minha folha de pagamento, conforme as normas internas da empresa.
+
+    </p>
+
+    <br><br><br>
+
+    <div class="assinatura">
+
+        ______________________________
+
+        <br>
+
+        Funcionário
+
+    </div>
+
+    <br><br>
+
+    <div class="assinatura">
+
+        ______________________________
+
+        <br>
+
+        Responsável
+
+    </div>
+
+    <hr>
+
+    <div class="rodape">
+
+        Documento emitido eletronicamente.
+
+        <br>
+
+        Sistema de Emissão de Vales
+
+    </div>
+
+</div>
+
+<button
+onclick="window.print()"
+class="botao">
+
+🧾 Imprimir Vale
+
+</button>
+
+<script src="js/termica.js"></script>
+
+</body>
+
+</html>
