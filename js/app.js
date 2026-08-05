@@ -46,23 +46,21 @@ selectEmpresa.addEventListener("change", function(){
 
 function gerarNumeroVale(){
 
+    let data = new Date();
 
-    let ultimoNumero =
-    localStorage.getItem("numeroVale") || 0;
+    let ano = data.getFullYear();
 
+    let mes = String(data.getMonth() + 1).padStart(2,"0");
 
-    ultimoNumero++;
-
-
-    localStorage.setItem(
-        "numeroVale",
-        ultimoNumero
-    );
+    let dia = String(data.getDate()).padStart(2,"0");
 
 
-    return "VG-" +
-    String(ultimoNumero).padStart(6,"0");
+    let codigo = crypto.randomUUID()
+    .substring(0,8)
+    .toUpperCase();
 
+
+    return `VG-${ano}${mes}${dia}-${codigo}`;
 
 }
 
