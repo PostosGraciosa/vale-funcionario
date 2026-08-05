@@ -42,6 +42,13 @@ window.onload = function () {
 
         window.print();
 
+        // Fecha a janela após a impressão
+        setTimeout(function () {
+
+            window.close();
+
+        }, 500);
+
     }, 300);
 
 };
