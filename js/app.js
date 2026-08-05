@@ -1,3 +1,4 @@
+
 // Carrega as empresas no campo de seleção
 
 const selectEmpresa = document.getElementById("empresa");
@@ -189,3 +190,4 @@ document.getElementById("btnTermica")
     emitirVale("termica.html");
 
 });
+}
