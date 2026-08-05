@@ -155,9 +155,16 @@ function emitirVale(destino){
     };
 
     localStorage.setItem(
-        "valeAtual",
-        JSON.stringify(dadosVale)
-    );
+    "valeAtual",
+    JSON.stringify(dadosVale)
+);
+
+// Se for impressão térmica, abre em uma nova aba
+if (destino === "termica.html") {
+
+    window.open("termica.html", "_blank");
+
+} else {
 
     window.location.href = destino;
 
