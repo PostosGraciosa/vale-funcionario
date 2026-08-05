@@ -171,6 +171,9 @@ if (destino === "termica.html") {
 
 }
 
+} // FECHA emitirVale
+
+
 
 // Botão A4
 
@@ -182,6 +185,7 @@ document.getElementById("btnA4")
 });
 
 
+
 // Botão Impressora Térmica
 
 document.getElementById("btnTermica")
@@ -190,4 +194,3 @@ document.getElementById("btnTermica")
     emitirVale("termica.html");
 
 });
-}
