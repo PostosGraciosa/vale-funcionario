@@ -55,9 +55,10 @@ function gerarNumeroVale(){
     let dia = String(data.getDate()).padStart(2,"0");
 
 
-    let codigo = crypto.randomUUID()
-    .substring(0,8)
-    .toUpperCase();
+    let codigo = Math.random()
+.toString(36)
+.substring(2,10)
+.toUpperCase();
 
 
     return `VG-${ano}${mes}${dia}-${codigo}`;
